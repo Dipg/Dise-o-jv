@@ -10,6 +10,19 @@ function getSelectedCheckboxValues(name) {
 
 
 function UpdateCost()  {
+
+    var sum = 150;
+    var gn, elem;
+    var gn, elem;
+
+    for (i=0; i<5; i++) {
+        gn = 'game'+i;
+        elem = document.getElementById(gn);
+        if (elem.checked == true) {   
+          sum += Number(elem.value); } 
+      }  
+
+    document.getElementById('totalcost').value = sum.toFixed(0);
     document.getElementById('container').innerHTML = "";
     for(const number of getSelectedCheckboxValues('color') ){
     var checkbox = document.createElement('input');
