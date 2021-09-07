@@ -22,7 +22,8 @@ function UpdateCost()  {
           sum += Number(elem.value); } 
       }  
 
-    document.getElementById('totalcost').value = sum.toFixed(0);
+    document.getElementById('Total').innerHTML='$'+ sum.toFixed(0);
+
 
     document.getElementById('container').innerHTML = "";
     for(const number of getSelectedCheckboxValues('color') ){
@@ -33,10 +34,11 @@ function UpdateCost()  {
     checkbox.value = 'car';
     checkbox.checked = true;
     checkbox.disabled = true;
+   
  
     var label = document.createElement('label')
     label.htmlFor = 'car';
-
+   
     label.appendChild(document.createTextNode(number));
  
     var br = document.createElement('br');
