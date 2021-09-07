@@ -9,14 +9,13 @@ function getSelectedCheckboxValues(name) {
 }
 
 
-
 function UpdateCost()  {
 
-    var sum = 150;
+    var sum = 0;
     var gn, elem;
     var gn, elem;
 
-    for (i=0; i<2; i++) {
+    for (i=0; i<3; i++) {
         gn = 'game'+i;
         elem = document.getElementById(gn);
         if (elem.checked == true) {   
