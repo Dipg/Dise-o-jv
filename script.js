@@ -15,7 +15,7 @@ function UpdateCost()  {
     var gn, elem;
     var gn, elem;
 
-    for (i=0; i<3; i++) {
+    for (i=0; i<6; i++) {
         gn = 'game'+i;
         elem = document.getElementById(gn);
         if (elem.checked == true) {   
@@ -30,6 +30,8 @@ function UpdateCost()  {
 
 
     document.getElementById('Bloque').innerHTML = "";
+
+    
     for(const number of getSelectedCheckboxValues('color') ){
     var Bloque= document.getElementById('Bloque');
     const todo= document.createElement("div");
