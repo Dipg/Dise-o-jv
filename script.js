@@ -9,50 +9,29 @@ function getSelectedCheckboxValues(name) {
 }
 
 
-// function UpdateCost()  {
-
-//     var sum = 150;
-//     var gn, elem;
-//     var gn, elem;
-
-//     for (i=0; i<2; i++) {
-//         gn = 'game'+i;
-//         elem = document.getElementById(gn);
-//         if (elem.checked == true) {   
-//           sum += Number(elem.value); } 
-//       }  
-
-//     document.getElementById('Total').innerHTML='$'+ sum.toFixed(0);
-
-
-//     document.getElementById('container').innerHTML = "";
-//     for(const number of getSelectedCheckboxValues('color') ){
-//     var checkbox = document.createElement('input');
-//     checkbox.type = 'checkbox';
-//     checkbox.id = 'car';
-//     checkbox.name = 'interest';
-//     checkbox.value = 'car';
-//     checkbox.checked = true;
-//     checkbox.disabled = true;
-   
- 
-//     var label = document.createElement('label')
-//     label.htmlFor = 'car';
-   
-//     label.appendChild(document.createTextNode(number));
- 
-//     var br = document.createElement('br');
- 
-//     var container = document.getElementById('container');
-//     container.appendChild(checkbox);
-//     container.appendChild(label);
-//     container.appendChild(br);
-//     }
-// }
-
-
 
 function UpdateCost()  {
+
+    var sum = 150;
+    var gn, elem;
+    var gn, elem;
+
+    for (i=0; i<2; i++) {
+        gn = 'game'+i;
+        elem = document.getElementById(gn);
+        if (elem.checked == true) {   
+          sum += Number(elem.value); } 
+      }  
+
+    document.getElementById('Total').innerHTML='$'+ sum.toFixed(0);
+
+
+
+
+
+
+    document.getElementById('Bloque').innerHTML = "";
+    for(const number of getSelectedCheckboxValues('color') ){
     var Bloque= document.getElementById('Bloque');
     const todo= document.createElement("div");
 
@@ -66,6 +45,8 @@ function UpdateCost()  {
 
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.checked = true;
+    checkbox.disabled = true;
     checkbox.classList.add('toggle__input', 'form-check-input');
     Segundo.appendChild(checkbox );
 
@@ -76,8 +57,9 @@ function UpdateCost()  {
     Segundo.appendChild(Cuarto );
 
     var Quinto= document.createElement('span');
-    Quinto.textContent = "Luces Estandar";
+    Quinto.textContent = number;
     Quinto.classList.add('toggle__text');
     Cuarto.appendChild(Quinto);
  
+    }
 }
