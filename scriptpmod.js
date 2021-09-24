@@ -1,9 +1,17 @@
 var values = [15+'s',30+'s',45+'s',60+'s',2+'m',3+'m'];    //values to step to
 
+// var input = document.getElementById('input'),
+//    output = document.getElementById('output');
 
-const sliderValue = document.getElementById('ani');
+// input.oninput = function(){
+//     output.innerHTML = values[this.value];
+// };
+// input.oninput(); //set default value
+
+const sliderValue = document.querySelector("span");
 const inputSlider = document.querySelector("input");
 const output = document.getElementById('output');
+
 
 inputSlider.oninput = function(){
       let value = inputSlider.value;
@@ -33,6 +41,7 @@ inputSlider.oninput = function(){
         else if (values[this.value]==3+'m') {
             sliderValue.style.left = (66) + "%";  
         }
+
 
 
       sliderValue.classList.add("show");

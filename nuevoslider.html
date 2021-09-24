@@ -1,0 +1,89 @@
+
+  <div style="position:relative; ">
+      
+      
+    <span class="lol" >
+    <span id="myValue"></span>
+    </span>
+    
+    
+    
+<div class="contra">
+    <input type="range" id="myRange" max="5" min="0" > 
+  </div>
+</div>
+
+
+  <script type="text/javascript" charset="utf-8">
+  
+  var values = [15+'s',30+'s',45+'s',60+'s',2+'m',3+'m'];   
+var myRange = document.querySelector('#myRange');
+var myValue = document.querySelector('#myValue');
+var myUnits = 'myUnits';
+var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
+var px =  ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
+
+  myValue.parentElement.style.left = px + 'px';
+  myValue.parentElement.style.top = myRange.offsetHeight + 'px';
+  myValue.innerHTML = myRange.value + ' ' + myUnits;
+
+  myRange.oninput =function(){
+      
+      
+    let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
+    myValue.innerHTML = values[this.value];
+    myValue.parentElement.style.left = px + 'px';
+  };
+  </script>
+
+
+<style>
+    
+.contra{
+
+
+    padding: 70px 0px 0 0px;
+}
+
+input[type='range'],
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #777;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin-top: -9px;
+}
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #777;
+  height:2px;
+    border-radius: 610px;
+    outline:none;
+    border:none;
+}
+
+ 
+.lol{
+    content: "";
+position:absolute;
+color:red; 
+border:1px solid white;
+min-width:100px;
+        border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    
+        background: rgb(90, 115, 224);
+            height:45px;
+    width:30px;
+}
+</style>
